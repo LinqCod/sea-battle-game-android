@@ -97,7 +97,7 @@ public class GameField {
         Cell startCell = randChooseStartCell();
         setFieldCell(startCell);
 
-        int orientation = MainActivity.rand.nextInt(2);
+        int orientation = GameActivity.rand.nextInt(2);
         if(orientation == 0)
             placeShipHorizontally(ship, startCell);
         else
@@ -206,8 +206,8 @@ public class GameField {
     }
 
     private Cell randChooseStartCell() {
-        int startX = MainActivity.rand.nextInt(getFieldWidth());
-        int startY = MainActivity.rand.nextInt(getFieldHeight());
+        int startX = GameActivity.rand.nextInt(getFieldWidth());
+        int startY = GameActivity.rand.nextInt(getFieldHeight());
 
         if(getFieldCell(startX, startY).getStatus() == 0 && cellsNotEmptyAroundCount(startX, startY) == 0) {
             return new Cell(startX, startY, 1);
