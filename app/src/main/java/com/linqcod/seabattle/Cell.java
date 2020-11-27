@@ -6,10 +6,21 @@ public class Cell {
 
     private int status;
 
+    private boolean isHitted;
+
     public Cell(int x, int y, int status) {
         this.x = x;
         this.y = y;
         this.status = status;
+        isHitted = false;
+    }
+
+    public boolean isHitted() {
+        return isHitted;
+    }
+
+    public void hit() {
+        isHitted = true;
     }
 
     public int getX() {

@@ -144,7 +144,6 @@ public class GameField {
         }
 
         if(cellsPlaced != ship.getSize()) {
-            Log.d("Test",startCell.getX() + " " + startCell.getY() + " " + ship.getSize());
             for(int i = 0; i < ship.getSize(); i++) {
                 if(cells[i] != null)
                     cells[i].setStatus(0);
@@ -152,6 +151,9 @@ public class GameField {
             startCell = randChooseStartCell();
             setFieldCell(startCell);
             placeShipHorizontally(ship, startCell);
+        }
+        else {
+            ship.setShipCoords(cells);
         }
     }
 
@@ -194,7 +196,6 @@ public class GameField {
         }
 
         if(cellsPlaced != ship.getSize()) {
-            Log.d("Test",startCell.getX() + " " + startCell.getY() + " " + ship.getSize());
             for(int i = 0; i < ship.getSize(); i++) {
                 if(cells[i] != null)
                     cells[i].setStatus(0);
@@ -202,6 +203,9 @@ public class GameField {
             startCell = randChooseStartCell();
             setFieldCell(startCell);
             placeShipVertically(ship, startCell);
+        }
+        else {
+            ship.setShipCoords(cells);
         }
     }
 
